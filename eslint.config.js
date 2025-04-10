@@ -1,6 +1,7 @@
 import { defineConfig } from "eslint/config"
 import globals from "globals"
 import eslintPlugin from "@eslint/js"
+import pluginImport from "eslint-plugin-import"
 import pluginPrettier from "eslint-plugin-prettier"
 import eslintConfigPrettier from "eslint-config-prettier/flat"
 
@@ -8,7 +9,7 @@ export default defineConfig([
   {
     // root: true,
     files: ["**/*.{js,mjs,cjs}"],
-    ignores: ["**/*.config.js", ".history/**/*"],
+    ignores: ["**/*.config.js", ".history/**"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
@@ -16,6 +17,7 @@ export default defineConfig([
     },
     plugins: {
       prettier: pluginPrettier,
+      import: pluginImport,
     },
     rules: {
       ...eslintPlugin.configs.recommended.rules,
@@ -25,6 +27,21 @@ export default defineConfig([
       "prettier/prettier": [
         "error",
         { endOfLine: "auto", singleQuote: false, semi: false },
+      ],
+      "import/order": [
+        "error",
+        {
+          groups: [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+          ],
+          "newlines-between": "always",
+          alphabetize: { order: "asc", caseInsensitive: true },
+        },
       ],
     },
   },
