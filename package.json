@@ -22,6 +22,9 @@
     "globals": "^16.0.0",
     "prettier": "^3.5.3"
   },
+  "scripts": {
+    "postinstall": "cp ./node_modules/@versoly/eslint-config/.prettierrc .prettierrc"
+  },
   "eslintConfig": {
     "extends": "@versoly/eslint-config"
   },
