@@ -1,6 +1,6 @@
 {
-  "name": "versoly-eslint-prettier-config",
-  "version": "1.0.2",
+  "name": "@versoly/eslint-config",
+  "version": "1.0.3",
   "description": "ESLint + Prettier config personalizada da Versoly",
   "main": "index.js",
   "exports": {
