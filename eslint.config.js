@@ -23,7 +23,7 @@ export default defineConfig([
       semi: ["error", "never"],
       "prefer-const": "error",
       "no-unused-vars": "warn",
-      "prettier/prettier": ["error", { endOfLine: "auto" }],
+      "prettier/prettier": ["error", { endOfLine: "lf" }],
     },
     // extends: ["eslint:recommended", "plugin:prettier/recommended"],
   },
