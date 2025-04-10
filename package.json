@@ -4,9 +4,14 @@
   "description": "ESLint + Prettier config personalizada da Versoly",
   "main": "index.js",
   "exports": {
-    ".": "./index.js"
+    ".": "./index.js",
+    "./prettier.config.js": "./prettier.config.js"
   },
-  "keywords": ["eslint", "prettier", "config"],
+  "keywords": [
+    "eslint",
+    "prettier",
+    "config"
+  ],
   "author": "Wesley Rodio / @WesleyRodio",
   "license": "MIT",
   "type": "module",
@@ -22,11 +27,8 @@
     "globals": "^16.0.0",
     "prettier": "^3.5.3"
   },
-  "scripts": {
-    "postinstall": "cp ./node_modules/@versoly/eslint-config/.prettierrc .prettierrc"
-  },
   "eslintConfig": {
     "extends": "@versoly/eslint-config"
   },
-  "prettier": "@versoly/eslint-config/.prettierrc"
+  "prettier": "@versoly/eslint-config/prettier.config.js"
 }

@@ -1,7 +1,7 @@
-import eslintPlugin from "@eslint/js"
 import { defineConfig } from "eslint/config"
 import globals from "globals"
-import pluginPrettier from "eslint-plugin-prettier/recommended"
+import eslintPlugin from "@eslint/js"
+import pluginPrettier from "eslint-plugin-prettier"
 import eslintConfigPrettier from "eslint-config-prettier/flat"
 
 export default defineConfig([
@@ -15,18 +15,18 @@ export default defineConfig([
       globals: globals.node,
     },
     plugins: {
-      pluginPrettier,
-      eslint: eslintPlugin,
+      prettier: pluginPrettier,
     },
     rules: {
       ...eslintPlugin.configs.recommended.rules,
       semi: ["error", "never"],
       "prefer-const": "error",
       "no-unused-vars": "warn",
-      "prettier/prettier": ["error", { endOfLine: "lf" }],
+      "prettier/prettier": [
+        "error",
+        { endOfLine: "auto", singleQuote: false, semi: false },
+      ],
     },
-    // extends: ["eslint:recommended", "plugin:prettier/recommended"],
   },
   eslintConfigPrettier,
-  pluginPrettier,
 ])
