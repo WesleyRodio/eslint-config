@@ -7,7 +7,7 @@
     ".": {
       "require": "./commonjs/index.js",
       "import": "./module/index.js"
-    }
+    },
     "./prettier.config.js": "./prettier.config.js"
   },
   "keywords": [
@@ -26,13 +26,16 @@
     "@eslint/js": "^9.24.0",
     "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.2",
-    "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.6",
     "globals": "^16.0.0",
     "prettier": "^3.5.3"
   },
   "eslintConfig": {
     "extends": "@versoly/eslint-config"
   },
-  "prettier": "@versoly/eslint-config/prettier.config.js"
+  "prettier": "@versoly/eslint-config/prettier.config.js",
+  "devDependencies": {
+    "globals": "^16.1.0"
+  }
 }
