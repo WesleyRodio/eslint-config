@@ -1,27 +1,9 @@
 {
   "name": "@versoly/eslint-config",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ESLint + Prettier config personalizada da Versoly",
   "main": "index.js",
-  "exports": {
-    ".": {
-      "require": "./commonjs/index.js",
-      "import": "./module/index.js"
-    },
-    "./prettier.config.js": "./prettier.config.js"
-  },
-  "keywords": [
-    "eslint",
-    "prettier",
-    "config"
-  ],
-  "author": "Wesley Rodio / @WesleyRodio",
   "license": "MIT",
-  "type": "module",
-  "packageManager": "pnpm@10.8.0",
-  "publishConfig": {
-    "access": "public"
-  },
   "peerDependencies": {
     "@eslint/js": "^9.24.0",
     "eslint": "^9.24.0",
