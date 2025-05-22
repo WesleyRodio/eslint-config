@@ -4,7 +4,10 @@
   "description": "ESLint + Prettier config personalizada da Versoly",
   "main": "index.js",
   "exports": {
-    ".": "./index.js",
+    ".": {
+      "require": "./commonjs/index.js",
+      "import": "./module/index.js"
+    }
     "./prettier.config.js": "./prettier.config.js"
   },
   "keywords": [
