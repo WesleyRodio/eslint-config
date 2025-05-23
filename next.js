@@ -1,5 +1,4 @@
 import { defineConfig } from "eslint/config"
-import globals from "globals"
 import eslintPlugin from "@eslint/js"
 import pluginImport from "eslint-plugin-import"
 import pluginPrettier from "eslint-plugin-prettier"
@@ -8,7 +7,7 @@ import eslintConfigPrettier from "eslint-config-prettier/flat"
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs}"],
-    ignores: ["**/*.config.js", ".history/**"],
+    ignores: ["**/*.config.js", "**/*.config.mjs", ".history/**"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
