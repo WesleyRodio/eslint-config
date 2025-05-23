@@ -23,7 +23,7 @@ export default defineConfig([
       "no-unused-vars": "warn",
       "prettier/prettier": [
         "error",
-        { endOfLine: "auto", singleQuote: false, semi: false },
+        { endOfLine: "auto", singleQuote: false, semi: "never" },
       ],
       "import/order": [
         "error",
