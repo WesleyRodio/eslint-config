@@ -1,5 +1,5 @@
 {
-  "name": "@wesleyrodio/eslint-config",
+  "name": "@wesleydevrodio/eslint-config",
   "version": "1.0.0",
   "description": "Configuração ESLint e Prettier compartilhável para projetos Next.js",
   "main": "index.js",
