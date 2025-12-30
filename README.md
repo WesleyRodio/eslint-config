@@ -30,19 +30,18 @@ npm install --save-dev github:wesleyrodio/eslint-config
 
 ## 📋 Dependências Necessárias
 
-Esta configuração requer as seguintes dependências no seu projeto:
+Esta configuração requer as seguintes dependências no seu projeto Next.js:
 
 ```bash
 npm install --save-dev \
-  eslint@^9.0.0 \
-  eslint-config-next@^15.0.0 \
   eslint-config-prettier@^10.0.0 \
   eslint-plugin-import@^2.31.0 \
   eslint-plugin-prettier@^5.2.0 \
   prettier@^3.0.0 \
-  typescript@^5.0.0 \
-  next@^15.0.0
+  prettier-plugin-tailwindcss@^0.7.0
 ```
+
+> **Nota:** As dependências `eslint`, `eslint-config-next`, `next` e `typescript` já vêm do Next.js, não é necessário instalá-las separadamente.
 
 ## 🔧 Uso
 
@@ -63,7 +62,27 @@ import eslintConfig from "@wesleyrodio/eslint-config";
 
 export default eslintConfig;
 ```
+### Prettier (Recomendado)
 
+Para que o Prettier funcione corretamente no editor e via CLI, crie um arquivo `prettier.config.js`:
+
+```javascript
+export { default } from "@wesleydevrodio/eslint-config/prettier";
+```
+
+Ou, se preferir personalizar:
+
+```javascript
+import prettierConfig from "@wesleydevrodio/eslint-config/prettier";
+
+export default {
+  ...prettierConfig,
+  // Suas personalizações aqui
+  printWidth: 100, // exemplo
+};
+```
+
+> **Importante:** O arquivo `prettier.config.js` é necessário para que o plugin do Tailwind CSS funcione corretamente e ordene as classes automaticamente.
 ## ✨ Funcionalidades
 
 Esta configuração inclui:
@@ -101,6 +120,7 @@ Esta configuração inclui:
 - ✅ Print width: 80 caracteres
 - ✅ Arrow parens: avoid
 - ✅ End of line: auto
+- ✅ **Plugin Tailwind CSS** - Ordena classes automaticamente
 
 ### 🎯 Next.js Específico
 - ✅ Core Web Vitals rules

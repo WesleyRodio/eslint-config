@@ -6,11 +6,13 @@
   "type": "module",
   "exports": {
     ".": "./index.js",
-    "./next": "./next.js"
+    "./next": "./next.js",
+    "./prettier": "./prettier.config.js"
   },
   "files": [
     "index.js",
     "next.js",
+    "prettier.config.js",
     "README.md"
   ],
   "scripts": {
@@ -28,14 +30,11 @@
   "license": "MIT",
   "packageManager": "pnpm@10.26.0",
   "peerDependencies": {
-    "eslint": "^9.0.0",
-    "eslint-config-next": "^15.0.0",
     "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.0",
-    "next": "^15.0.0",
     "prettier": "^3.0.0",
-    "typescript": "^5.0.0"
+    "prettier-plugin-tailwindcss": "^0.7.0"
   },
   "repository": {
     "type": "git",

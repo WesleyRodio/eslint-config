@@ -45,23 +45,9 @@ const eslintConfig = defineConfig([
       "import/no-duplicates": "error",
       "import/newline-after-import": "error",
 
-      "prettier/prettier": [
-        "error",
-        {
-          semi: true,
-          singleQuote: false,
-          tabWidth: 2,
-          printWidth: 80,
-          arrowParens: "avoid",
-          bracketSpacing: true,
-          endOfLine: "auto",
-          jsxSingleQuote: false,
-          quoteProps: "as-needed",
-          proseWrap: "preserve",
-          htmlWhitespaceSensitivity: "css",
-          vueIndentScriptAndStyle: true,
-        },
-      ],
+      // Prettier - usa as configurações do prettier.config.js
+      "prettier/prettier": "error",
+
       "import/order": [
         "error",
         {
