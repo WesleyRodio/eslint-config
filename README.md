@@ -4,13 +4,13 @@
 
 ## 📦 Instalação
 
-### Via NPM (Recomendado)
+### Via NPM
 
 ```bash
-npm install --save-dev @wesleyrodio/eslint-config
+npm install --save-dev @wesleydevrodio/eslint-config
 ```
 
-### Via PNPM
+### Via PNPM (Recomendado)
 
 ```bash
 pnpm add -D @wesleyrodio/eslint-config
@@ -32,8 +32,29 @@ npm install --save-dev github:wesleyrodio/eslint-config
 
 Esta configuração requer as seguintes dependências no seu projeto Next.js:
 
+### Com NPM:
 ```bash
 npm install --save-dev \
+  eslint-config-prettier@^10.0.0 \
+  eslint-plugin-import@^2.31.0 \
+  eslint-plugin-prettier@^5.2.0 \
+  prettier@^3.0.0 \
+  prettier-plugin-tailwindcss@^0.7.0
+```
+
+### Com PNPM:
+```bash
+pnpm add -D \
+  eslint-config-prettier@^10.0.0 \
+  eslint-plugin-import@^2.31.0 \
+  eslint-plugin-prettier@^5.2.0 \
+  prettier@^3.0.0 \
+  prettier-plugin-tailwindcss@^0.7.0
+```
+
+### Com Yarn:
+```bash
+yarn add -D \
   eslint-config-prettier@^10.0.0 \
   eslint-plugin-import@^2.31.0 \
   eslint-plugin-prettier@^5.2.0 \
@@ -62,15 +83,19 @@ import eslintConfig from "@wesleyrodio/eslint-config";
 
 export default eslintConfig;
 ```
-### Prettier (Recomendado)
+### Prettier + Tailwind CSS (OBRIGATÓRIO)
 
-Para que o Prettier funcione corretamente no editor e via CLI, crie um arquivo `prettier.config.js`:
+⚠️ **Importante:** Para que o Prettier e o plugin Tailwind CSS funcionem, você **DEVE** criar um arquivo `prettier.config.js` na raiz do seu projeto:
 
 ```javascript
 export { default } from "@wesleydevrodio/eslint-config/prettier";
 ```
 
-Ou, se preferir personalizar:
+Sem este arquivo, o Prettier não aplicará a formatação e o Tailwind CSS não ordenará as classes automaticamente.
+
+#### Personalizando (opcional):
+
+Se quiser customizar alguma configuração:
 
 ```javascript
 import prettierConfig from "@wesleydevrodio/eslint-config/prettier";
@@ -81,8 +106,6 @@ export default {
   printWidth: 100, // exemplo
 };
 ```
-
-> **Importante:** O arquivo `prettier.config.js` é necessário para que o plugin do Tailwind CSS funcione corretamente e ordene as classes automaticamente.
 ## ✨ Funcionalidades
 
 Esta configuração inclui:

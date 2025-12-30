@@ -3,20 +3,20 @@
  * @type {import('prettier').Config & import('prettier-plugin-tailwindcss').PluginOptions}
  */
 const prettierConfig = {
-  // Formatação geral
+  // Formatação básica
   semi: true,
-  singleQuote: false,
   tabWidth: 2,
   printWidth: 80,
-  arrowParens: "avoid",
-  bracketSpacing: true,
   endOfLine: "auto",
 
-  // JSX/TSX
+  // Aspas
+  singleQuote: false,
   jsxSingleQuote: false,
-
-  // Objetos
   quoteProps: "as-needed",
+
+  // Espaçamento
+  bracketSpacing: true,
+  arrowParens: "avoid",
 
   // Markdown
   proseWrap: "preserve",

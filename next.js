@@ -45,8 +45,35 @@ const eslintConfig = defineConfig([
       "import/no-duplicates": "error",
       "import/newline-after-import": "error",
 
-      // Prettier - usa as configurações do prettier.config.js
-      "prettier/prettier": "error",
+      "prettier/prettier": [
+        "error",
+        {
+          // Formatação básica
+          semi: true,
+          tabWidth: 2,
+          printWidth: 80,
+          endOfLine: "auto",
+
+          // Aspas
+          singleQuote: false,
+          jsxSingleQuote: false,
+          quoteProps: "as-needed",
+
+          // Espaçamento
+          bracketSpacing: true,
+          arrowParens: "avoid",
+
+          // Markdown
+          proseWrap: "preserve",
+
+          // HTML/Vue
+          htmlWhitespaceSensitivity: "css",
+          vueIndentScriptAndStyle: true,
+
+          // Plugins - Tailwind CSS deve vir por último
+          plugins: ["prettier-plugin-tailwindcss"],
+        },
+      ],
 
       "import/order": [
         "error",
