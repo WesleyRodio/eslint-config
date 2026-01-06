@@ -1,18 +1,22 @@
 {
   "name": "@wesleydevrodio/eslint-config",
   "version": "1.1.1",
-  "description": "Configuração ESLint e Prettier compartilhável para projetos Next.js",
+  "description": "Configuração ESLint e Prettier compartilhável para projetos Next.js e APIs RESTful",
   "main": "index.js",
   "type": "module",
   "exports": {
     ".": "./index.js",
     "./next": "./next.js",
-    "./prettier": "./prettier.config.js"
+    "./api": "./api.js",
+    "./prettier": "./prettier.config.js",
+    "./prettier-api": "./prettier-api.config.js"
   },
   "files": [
     "index.js",
     "next.js",
+    "api.js",
     "prettier.config.js",
+    "prettier-api.config.js",
     "README.md"
   ],
   "scripts": {
@@ -23,6 +27,8 @@
     "eslint-config",
     "prettier",
     "nextjs",
+    "api",
+    "restful",
     "typescript",
     "formatting"
   ],
@@ -30,11 +36,17 @@
   "license": "MIT",
   "packageManager": "pnpm@10.26.0",
   "peerDependencies": {
+    "eslint": "^9.0.0",
     "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.0",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.7.0"
+  },
+  "peerDependenciesMeta": {
+    "prettier-plugin-tailwindcss": {
+      "optional": true
+    }
   },
   "repository": {
     "type": "git",

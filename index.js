@@ -9,3 +9,4 @@ export { default } from "./next.js";
 
 // Exportações nomeadas para diferentes ambientes
 export { default as nextjs } from "./next.js";
+export { default as api } from "./api.js";
