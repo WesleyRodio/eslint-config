@@ -2,9 +2,11 @@ import js from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
 import importPlugin from "eslint-plugin-import";
 import prettier from "eslint-plugin-prettier";
+import tseslint from "typescript-eslint";
 
 const eslintConfig = [
   js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
     ignores: [
       "node_modules/**",
@@ -15,11 +17,11 @@ const eslintConfig = [
       "*.config.js",
       "*.config.ts",
     ],
-  },
-  {
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
+      parser: tseslint.parser,
       globals: {
         // Node.js globals
         console: "readonly",
