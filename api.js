@@ -64,6 +64,24 @@ const eslintConfig = [
       // Console permitido em APIs
       "no-console": "off",
 
+      // Variáveis não utilizadas (ignora variáveis com prefixo _)
+      "no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+
       // Async/Await
       "require-await": "error",
       "no-return-await": "error",
