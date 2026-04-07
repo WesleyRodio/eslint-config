@@ -83,7 +83,7 @@ const eslintConfig = [
       ],
 
       // Async/Await
-      "require-await": "error",
+      "require-await": "off",
       "no-return-await": "error",
       "no-promise-executor-return": "error",
 
@@ -93,6 +93,7 @@ const eslintConfig = [
       "prefer-template": "warn",
       "prefer-arrow-callback": "warn",
       "object-shorthand": "warn",
+      "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
 
       // Imports
       "import/no-duplicates": "error",
