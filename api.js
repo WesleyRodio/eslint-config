@@ -53,9 +53,10 @@ const eslintConfig = [
       import: importPlugin,
     },
     rules: {
-      // Sintaxe e estilo básico
       semi: ["error", "always"],
       "prefer-const": "error",
+
+      "no-console": ["warn", { allow: ["warn", "error", "log"] }],
       "no-var": "error",
       eqeqeq: ["error", "always"],
       "no-eval": "error",
@@ -87,7 +88,6 @@ const eslintConfig = [
       "no-return-await": "error",
       "no-promise-executor-return": "error",
 
-      // Código limpo
       "no-nested-ternary": "warn",
       "no-unneeded-ternary": "error",
       "prefer-template": "warn",
@@ -95,26 +95,24 @@ const eslintConfig = [
       "object-shorthand": "warn",
       "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
 
-      // Imports
       "import/no-duplicates": "error",
       "import/newline-after-import": "error",
-      "import/order": [
+
+      "react-refresh/only-export-components": "off",
+
+      "@typescript-eslint/no-unused-vars": [
         "error",
         {
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index",
-          ],
-          "newlines-between": "always",
-          alphabetize: { order: "asc", caseInsensitive: true },
+          args: "all",
+          argsIgnorePattern: "^_",
+          caughtErrors: "all",
+          caughtErrorsIgnorePattern: "^_",
+          destructuredArrayIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          ignoreRestSiblings: true,
         },
       ],
 
-      // Prettier integration
       "prettier/prettier": [
         "error",
         {
@@ -139,6 +137,35 @@ const eslintConfig = [
           // HTML/Vue
           htmlWhitespaceSensitivity: "css",
           vueIndentScriptAndStyle: true,
+
+          // Plugins - Tailwind CSS deve vir por último
+          plugins: ["prettier-plugin-tailwindcss"],
+        },
+      ],
+
+      "import/order": [
+        "error",
+        {
+          groups: [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+          ],
+          pathGroups: [
+            { pattern: "@/**", group: "internal", position: "before" },
+            { pattern: "@pages/**", group: "internal", position: "before" },
+            {
+              pattern: "@components/**",
+              group: "internal",
+              position: "before",
+            },
+          ],
+          pathGroupsExcludedImportTypes: ["builtin", "external", "internal"],
+          "newlines-between": "always",
+          alphabetize: { order: "asc", caseInsensitive: true },
         },
       ],
     },

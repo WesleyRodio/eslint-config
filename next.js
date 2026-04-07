@@ -45,6 +45,21 @@ const eslintConfig = defineConfig([
       "import/no-duplicates": "error",
       "import/newline-after-import": "error",
 
+      "react-refresh/only-export-components": "off",
+
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          args: "all",
+          argsIgnorePattern: "^_",
+          caughtErrors: "all",
+          caughtErrorsIgnorePattern: "^_",
+          destructuredArrayIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          ignoreRestSiblings: true,
+        },
+      ],
+
       "prettier/prettier": [
         "error",
         {
@@ -86,6 +101,16 @@ const eslintConfig = defineConfig([
             "sibling",
             "index",
           ],
+          pathGroups: [
+            { pattern: "@/**", group: "internal", position: "before" },
+            { pattern: "@pages/**", group: "internal", position: "before" },
+            {
+              pattern: "@components/**",
+              group: "internal",
+              position: "before",
+            },
+          ],
+          pathGroupsExcludedImportTypes: ["builtin", "external", "internal"],
           "newlines-between": "always",
           alphabetize: { order: "asc", caseInsensitive: true },
         },
