@@ -103,6 +103,10 @@ const eslintConfig = [
       "space-before-blocks": "off",
       "@typescript-eslint/no-empty-function": "off",
 
+      "block-spacing": "off",
+      "@typescript-eslint/block-spacing": "off",
+      "space-before-blocks": "off",
+
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
