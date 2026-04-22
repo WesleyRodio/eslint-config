@@ -7,6 +7,7 @@ import tseslint from "typescript-eslint";
 const eslintConfig = [
   js.configs.recommended,
   ...tseslint.configs.recommended,
+  eslintConfigPrettier, // ← desliga regras ESLint que conflitam com Prettier
   {
     ignores: [
       "node_modules/**",
@@ -23,7 +24,6 @@ const eslintConfig = [
       sourceType: "module",
       parser: tseslint.parser,
       globals: {
-        // Node.js globals
         console: "readonly",
         process: "readonly",
         Buffer: "readonly",
@@ -33,7 +33,6 @@ const eslintConfig = [
         module: "writable",
         require: "readonly",
         global: "readonly",
-        // ES2021 globals
         globalThis: "readonly",
         Promise: "readonly",
         Set: "readonly",
@@ -41,7 +40,6 @@ const eslintConfig = [
         WeakSet: "readonly",
         WeakMap: "readonly",
         Symbol: "readonly",
-        // Additional
         setTimeout: "readonly",
         setInterval: "readonly",
         clearTimeout: "readonly",
@@ -53,60 +51,35 @@ const eslintConfig = [
       import: importPlugin,
     },
     rules: {
-      semi: ["error", "always"],
-      "prefer-const": "error",
+      // Prettier
+      "prettier/prettier": [
+        "error",
+        {
+          semi: true,
+          tabWidth: 2,
+          printWidth: 80,
+          endOfLine: "auto",
+          singleQuote: false,
+          jsxSingleQuote: false,
+          quoteProps: "as-needed",
+          bracketSpacing: true,
+          arrowParens: "avoid",
+          proseWrap: "preserve",
+          htmlWhitespaceSensitivity: "css",
+          vueIndentScriptAndStyle: true,
+        },
+      ],
 
-      "no-console": ["warn", { allow: ["warn", "error", "log"] }],
+      // Geral
+      "prefer-const": "error",
       "no-var": "error",
       eqeqeq: ["error", "always"],
       "no-eval": "error",
       "no-implied-eval": "error",
-
-      // Console permitido em APIs
       "no-console": "off",
 
-      // Variáveis não utilizadas (ignora variáveis com prefixo _)
-      "no-unused-vars": [
-        "error",
-        {
-          argsIgnorePattern: "^_",
-          varsIgnorePattern: "^_",
-          caughtErrorsIgnorePattern: "^_",
-        },
-      ],
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        {
-          argsIgnorePattern: "^_",
-          varsIgnorePattern: "^_",
-          caughtErrorsIgnorePattern: "^_",
-        },
-      ],
-
-      // Async/Await
-      "require-await": "off",
-      "no-return-await": "error",
-      "no-promise-executor-return": "error",
-
-      "no-nested-ternary": "warn",
-      "no-unneeded-ternary": "error",
-      "prefer-template": "warn",
-      "prefer-arrow-callback": "warn",
-      "object-shorthand": "warn",
-      "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
-
-      "import/no-duplicates": "error",
-      "import/newline-after-import": "error",
-
-      "react-refresh/only-export-components": "off",
-
-      "space-before-blocks": "off",
-      "@typescript-eslint/no-empty-function": "off",
-
-      "block-spacing": "off",
-      "@typescript-eslint/block-spacing": "off",
-      "space-before-blocks": "off",
-
+      // Variáveis não utilizadas
+      "no-unused-vars": "off", // desliga a base, usa a do TypeScript
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
@@ -120,42 +93,26 @@ const eslintConfig = [
         },
       ],
 
-      "prettier/prettier": [
+      // Async/Await
+      "require-await": "off",
+      "no-return-await": "error",
+      "no-promise-executor-return": "error",
+
+      // Estilo
+      "no-nested-ternary": "warn",
+      "no-unneeded-ternary": "error",
+      "prefer-template": "warn",
+      "prefer-arrow-callback": "warn",
+      "object-shorthand": "warn",
+      "arrow-body-style": [
         "error",
-        {
-          // Formatação básica
-          semi: true,
-          tabWidth: 2,
-          printWidth: 80,
-          endOfLine: "auto",
-
-          // Aspas
-          singleQuote: false,
-          jsxSingleQuote: false,
-          quoteProps: "as-needed",
-
-          // Espaçamento
-          bracketSpacing: true,
-          arrowParens: "avoid",
-
-          // Markdown
-          proseWrap: "preserve",
-
-          // HTML/Vue
-          htmlWhitespaceSensitivity: "css",
-          vueIndentScriptAndStyle: true,
-
-          // Bloco de código
-          bracketSpacing: true,
-
-          // Injeção de dependências
-          experimentalTernaries: true,
-
-          // Plugins - Tailwind CSS deve vir por último
-          plugins: ["prettier-plugin-tailwindcss"],
-        },
+        "as-needed",
+        { requireReturnForObjectLiteral: true },
       ],
 
+      // Imports
+      "import/no-duplicates": "error",
+      "import/newline-after-import": "error",
       "import/order": [
         "error",
         {
@@ -170,11 +127,7 @@ const eslintConfig = [
           pathGroups: [
             { pattern: "@/**", group: "internal", position: "before" },
             { pattern: "@pages/**", group: "internal", position: "before" },
-            {
-              pattern: "@components/**",
-              group: "internal",
-              position: "before",
-            },
+            { pattern: "@components/**", group: "internal", position: "before" },
           ],
           pathGroupsExcludedImportTypes: ["builtin", "external", "internal"],
           "newlines-between": "always",
@@ -183,7 +136,6 @@ const eslintConfig = [
       ],
     },
   },
-  eslintConfigPrettier,
 ];
 
 export default eslintConfig;
