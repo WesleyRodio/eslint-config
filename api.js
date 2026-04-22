@@ -77,6 +77,9 @@ const eslintConfig = [
 
       "react-refresh/only-export-components": "off",
 
+      "space-before-blocks": "off",
+      "@typescript-eslint/no-empty-function": "off",
+
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
@@ -114,6 +117,12 @@ const eslintConfig = [
           // HTML/Vue
           htmlWhitespaceSensitivity: "css",
           vueIndentScriptAndStyle: true,
+
+          // Bloco de código
+          bracketSpacing: true,
+
+          // Injeção de dependências
+          experimentalTernaries: true,
 
           // Plugins - Tailwind CSS deve vir por último
           plugins: ["prettier-plugin-tailwindcss"],
