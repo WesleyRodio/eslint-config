@@ -25,6 +25,12 @@ const prettierConfig = {
   htmlWhitespaceSensitivity: "css",
   vueIndentScriptAndStyle: true,
 
+  // Bloco de código
+  bracketSpacing: true,
+
+  // Injeção de dependências
+  experimentalTernaries: true,
+
   // Plugins - Tailwind CSS deve vir por último
   plugins: ["prettier-plugin-tailwindcss"],
 };
