@@ -62,7 +62,29 @@ const eslintConfig = [
       "no-eval": "error",
       "no-implied-eval": "error",
 
-      "require-await": "error",
+      // Console permitido em APIs
+      "no-console": "off",
+
+      // Variáveis não utilizadas (ignora variáveis com prefixo _)
+      "no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+
+      // Async/Await
+      "require-await": "off",
       "no-return-await": "error",
       "no-promise-executor-return": "error",
 
@@ -71,6 +93,7 @@ const eslintConfig = [
       "prefer-template": "warn",
       "prefer-arrow-callback": "warn",
       "object-shorthand": "warn",
+      "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
 
       "import/no-duplicates": "error",
       "import/newline-after-import": "error",
