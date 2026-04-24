@@ -1,68 +1,32 @@
-# @wesleyrodio/eslint-config
+# @wesleydevrodio/eslint-config
 
-🚀 Configuração ESLint e Prettier compartilhável para projetos Next.js com TypeScript.
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
+![Prettier](https://img.shields.io/badge/prettier-%23F7B93E.svg?style=for-the-badge&logo=prettier&logoColor=black)
+
+🚀 Configuração ESLint e Prettier opinativa e completa, focada exclusivamente em **projetos TypeScript** (Next.js e APIs RESTful).
 
 ## 📦 Instalação
 
-### Via NPM
+Agora ficou muito mais simples! Todas as ferramentas necessárias (ESLint, Prettier, TypeScript e plugins) já vêm incluídas automaticamente.
 
+### Via NPM
 ```bash
 npm install --save-dev @wesleydevrodio/eslint-config
 ```
 
 ### Via PNPM (Recomendado)
-
 ```bash
-pnpm add -D @wesleyrodio/eslint-config
+pnpm add -D @wesleydevrodio/eslint-config
 ```
 
 ### Via Yarn
-
 ```bash
-yarn add -D @wesleyrodio/eslint-config
+yarn add -D @wesleydevrodio/eslint-config
 ```
 
-### Via GitHub (alternativa)
-
-```bash
-npm install --save-dev github:wesleyrodio/eslint-config
-```
-
-## 📋 Dependências Necessárias
-
-Esta configuração requer as seguintes dependências no seu projeto Next.js:
-
-### Com NPM:
-```bash
-npm install --save-dev \
-  eslint-config-prettier@^10.0.0 \
-  eslint-plugin-import@^2.31.0 \
-  eslint-plugin-prettier@^5.2.0 \
-  prettier@^3.0.0 \
-  prettier-plugin-tailwindcss@^0.7.0
-```
-
-### Com PNPM:
-```bash
-pnpm add -D \
-  eslint-config-prettier@^10.0.0 \
-  eslint-plugin-import@^2.31.0 \
-  eslint-plugin-prettier@^5.2.0 \
-  prettier@^3.0.0 \
-  prettier-plugin-tailwindcss@^0.7.0
-```
-
-### Com Yarn:
-```bash
-yarn add -D \
-  eslint-config-prettier@^10.0.0 \
-  eslint-plugin-import@^2.31.0 \
-  eslint-plugin-prettier@^5.2.0 \
-  prettier@^3.0.0 \
-  prettier-plugin-tailwindcss@^0.7.0
-```
-
-> **Nota:** As dependências `eslint`, `eslint-config-next`, `next` e `typescript` já vêm do Next.js, não é necessário instalá-las separadamente.
+## 📋 Como funciona
+Ao instalar este pacote, você não precisa instalar manualmente o `eslint`, `prettier` ou qualquer plugin. Eles já estão listados como dependências diretas e estarão disponíveis no seu `node_modules`.
 
 ## 🔧 Uso
 
@@ -71,18 +35,21 @@ yarn add -D \
 Crie um arquivo `eslint.config.js` na raiz do seu projeto:
 
 ```javascript
-import eslintConfig from "@wesleyrodio/eslint-config/next";
+import eslintConfig from "@wesleydevrodio/eslint-config/next";
 
 export default eslintConfig;
 ```
 
-Ou simplesmente:
+### API (Node.js / TypeScript)
+
+Para projetos de API (sem React), use a configuração de API:
 
 ```javascript
-import eslintConfig from "@wesleyrodio/eslint-config";
+import eslintConfig from "@wesleydevrodio/eslint-config/api";
 
 export default eslintConfig;
 ```
+
 ### Prettier + Tailwind CSS (OBRIGATÓRIO)
 
 ⚠️ **Importante:** Para que o Prettier e o plugin Tailwind CSS funcionem, você **DEVE** criar um arquivo `prettier.config.js` na raiz do seu projeto:

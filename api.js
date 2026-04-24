@@ -1,10 +1,11 @@
+import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
-import importPlugin from "eslint-plugin-import";
+import importPlugin from "eslint-plugin-import-x";
 import prettier from "eslint-plugin-prettier";
 import tseslint from "typescript-eslint";
 
-const eslintConfig = [
+const eslintConfig = defineConfig([
   js.configs.recommended,
   ...tseslint.configs.recommended,
   eslintConfigPrettier, // ← desliga regras ESLint que conflitam com Prettier
@@ -136,6 +137,6 @@ const eslintConfig = [
       ],
     },
   },
-];
+]);
 
 export default eslintConfig;

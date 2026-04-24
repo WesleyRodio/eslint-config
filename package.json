@@ -1,7 +1,7 @@
 {
   "name": "@wesleydevrodio/eslint-config",
-  "version": "1.5.0",
-  "description": "Configuração ESLint e Prettier compartilhável para projetos Next.js e APIs RESTful",
+  "version": "2.0.0",
+  "description": "Configuração ESLint e Prettier opinativa e completa, focada em projetos TypeScript (Next.js e APIs RESTful)",
   "main": "index.js",
   "type": "module",
   "exports": {
@@ -30,29 +30,24 @@
     "api",
     "restful",
     "typescript",
-    "formatting"
+    "ts-eslint",
+    "formatting",
+    "dx"
   ],
   "author": "Wesley Rodio",
   "license": "MIT",
   "packageManager": "pnpm@10.26.0",
   "dependencies": {
-    "eslint-config-prettier": "^10.0.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prettier": "^5.2.0",
-    "prettier-plugin-tailwindcss": "^0.7.0"
-  },
-  "peerDependencies": {
-    "eslint": "^9.0.0",
-    "prettier": "^3.0.0",
-    "typescript": "^5.0.0"
-  },
-  "peerDependenciesMeta": {
-    "prettier-plugin-tailwindcss": {
-      "optional": true
-    },
-    "typescript": {
-      "optional": true
-    }
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.1",
+    "eslint-config-next": "^16.2.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import-x": "^4.16.2",
+    "eslint-plugin-prettier": "^5.5.5",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.7.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.59.0"
   },
   "repository": {
     "type": "git",
