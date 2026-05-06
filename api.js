@@ -1,8 +1,8 @@
-import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
 import importPlugin from "eslint-plugin-import-x";
 import prettier from "eslint-plugin-prettier";
+import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
 const eslintConfig = defineConfig([
@@ -84,7 +84,7 @@ const eslintConfig = defineConfig([
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
-          args: "all",
+          args: "after-used",
           argsIgnorePattern: "^_",
           caughtErrors: "all",
           caughtErrorsIgnorePattern: "^_",
