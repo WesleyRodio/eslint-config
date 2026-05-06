@@ -1,6 +1,6 @@
 {
   "name": "@wesleydevrodio/eslint-config",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Configuração ESLint e Prettier opinativa e completa, focada em projetos TypeScript (Next.js e APIs RESTful)",
   "main": "index.js",
   "type": "module",
