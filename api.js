@@ -103,13 +103,14 @@ const eslintConfig = defineConfig([
       "no-nested-ternary": "warn",
       "no-unneeded-ternary": "error",
       "prefer-template": "warn",
-      "prefer-arrow-callback": "warn",
       "object-shorthand": "warn",
-      "arrow-body-style": [
-        "error",
-        "as-needed",
-        { requireReturnForObjectLiteral: true },
-      ],
+      // Removida temporariamente
+      // "prefer-arrow-callback": "warn",
+      // "arrow-body-style": [
+      //   "error",
+      //   "as-needed",
+      //   { requireReturnForObjectLiteral: true },
+      // ],
 
       // Imports
       "import/no-duplicates": "error",
